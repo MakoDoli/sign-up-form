@@ -13,7 +13,7 @@ export let newUser = {
 export default function Form() {
   const [userEmail, setUserEmail] = useState("");
 
-  const [objData, setObjData] = useState(newUser);
+  // const [objData, setObjData] = useState(newUser);
 
   const reducer = function (state, action) {
     switch (action.type) {

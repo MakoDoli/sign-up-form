@@ -1,15 +1,13 @@
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { newUser } from "../../components/Form";
 import "../../components/Form.css";
 import { useState } from "react";
-import { setObjData } from "../../components/Form";
 
 export default function Return() {
   const navigate = useNavigate();
 
   const reset = () => {
     navigate("/");
-    setObjData("");
   };
   const [visible, setVisible] = useState(false);
   return (
