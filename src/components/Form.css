@@ -126,6 +126,7 @@ form p {
     flex-direction: row;
     gap: 45px;
     height: 100vh;
+    background-image: url("../assets/bg-intro-desktop.png");
   }
   .heading {
     width: 525px;
