@@ -8,6 +8,7 @@ export default function Return() {
 
   const reset = () => {
     navigate("/");
+    window.location.reload();
   };
   const [visible, setVisible] = useState(false);
   return (
