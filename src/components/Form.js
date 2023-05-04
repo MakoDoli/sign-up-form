@@ -1,20 +1,20 @@
 import "./Form.css";
 import { useNavigate } from "react-router-dom";
-import { useState, useReducer, useContext } from "react";
+import { useState, useReducer } from "react";
 
-import { newObj } from "../App";
+import { newObj } from "./newObj";
 
 const userArray = [];
 
-// export let newUser = {
-//   name: "",
-//   surname: "",
-//   email: "",
-//   password: "",
-// };
-export let newUser = {};
+export let newUser = {
+  name: "",
+  surname: "",
+  email: "",
+  password: "",
+};
+
 export default function Form() {
-  newUser = useContext(newObj);
+  newUser = newObj; // amas tu wavshli, monacemebs sheinaxavs da ar gaasuftavebs objects ukan dabrunebisas
   const [userEmail, setUserEmail] = useState("");
 
   const reducer = function (state, action) {
@@ -75,7 +75,7 @@ export default function Form() {
                 dispatch({ type: "UPDATE_NAME", payload: e.target.value })
               }
               placeholder="Your name"
-              // value={state.name}
+              value={state.name}
             />
 
             <input
@@ -84,13 +84,13 @@ export default function Form() {
               onChange={(e) =>
                 dispatch({ type: "UPDATE_LASTNAME", payload: e.target.value })
               }
-              // value={state.surname}
+              value={state.surname}
             />
             <input
               placeholder="Email"
               type="email"
               onChange={(e) => setUserEmail(e.target.value)}
-              // value={userEmail}
+              value={userEmail}
             />
             <input
               placeholder="Password"
