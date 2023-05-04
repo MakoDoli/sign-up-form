@@ -1,19 +1,21 @@
 import "./Form.css";
 import { useNavigate } from "react-router-dom";
-import { useState, useReducer } from "react";
+import { useState, useReducer, useContext } from "react";
+
+import { newObj } from "../App";
 
 const userArray = [];
 
-export let newUser = {
-  name: "",
-  surname: "",
-  email: "",
-  password: "",
-};
+// export let newUser = {
+//   name: "",
+//   surname: "",
+//   email: "",
+//   password: "",
+// };
+export let newUser = {};
 export default function Form() {
+  newUser = useContext(newObj);
   const [userEmail, setUserEmail] = useState("");
-
-  // const [objData, setObjData] = useState(newUser);
 
   const reducer = function (state, action) {
     switch (action.type) {
@@ -38,7 +40,7 @@ export default function Form() {
     //რამე ფუნქცია რითაც შეყვანილ მონაცემებს/ობიექტს რამე უნდა ვუქნათ. მაგ., გავuშვათ API request ან ბექში (ეგ ჯერ არ ვიცი)
     state.email = userEmail;
     console.log(state);
-    // setObjData(state);
+
     newUser = state;
     console.log(newUser);
     userArray.push(state);
@@ -73,7 +75,7 @@ export default function Form() {
                 dispatch({ type: "UPDATE_NAME", payload: e.target.value })
               }
               placeholder="Your name"
-              value={state.name}
+              // value={state.name}
             />
 
             <input
@@ -82,13 +84,13 @@ export default function Form() {
               onChange={(e) =>
                 dispatch({ type: "UPDATE_LASTNAME", payload: e.target.value })
               }
-              value={state.surname}
+              // value={state.surname}
             />
             <input
               placeholder="Email"
               type="email"
               onChange={(e) => setUserEmail(e.target.value)}
-              value={userEmail}
+              // value={userEmail}
             />
             <input
               placeholder="Password"

@@ -8,7 +8,9 @@ export default function Return() {
 
   const reset = () => {
     navigate("/");
-    window.location.reload();
+    // newUser.name = "";
+    // newUser.surname = "";
+    console.log(newUser)
   };
   const [visible, setVisible] = useState(false);
   return (
